@@ -1,4 +1,14 @@
-
+body {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    min-height: 100vh;
+    margin: 0;
+    background: linear-gradient(
+        to bottom,
+         #d7be82,
+         #755c1b    )
+   
+    
+}
 h5 {
     text-align: center;
 }
@@ -6,6 +16,7 @@ h5 {
 col-12 col-md-6 {
     text-align: center;
     font-weight: bold;
+    
 }
 
 .pie-chart {
@@ -46,3 +57,21 @@ col-12 col-md-6 {
 .red { background-color: #f44336;}
 .green { background-color: #4caf50; }
 .yellow { background-color: #ffc107; }
+
+.card-body {
+    background-color:#515a47;
+    text-align: center;
+    box-shadow: #070707 0px 4px 10px;
+    color: white;
+}
+
+.custom-navbar {
+    background-color: #515a47;
+    box-shadow: #070707 0px 4px 10px;
+}
+.custom-navbar .navbar-brand, .nav-link {
+    color: white;
+
+}
+
+
