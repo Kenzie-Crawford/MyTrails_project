@@ -1,0 +1,48 @@
+
+h5 {
+    text-align: center;
+}
+
+col-12 col-md-6 {
+    text-align: center;
+    font-weight: bold;
+}
+
+.pie-chart {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background: conic-gradient(
+        #4caf50 0% 40%,
+        #ff9800 40% 70%,
+        #f44336 70% 100%
+    );
+    margin: 20px auto;
+}
+
+.chart-legend{
+    text-align: center;
+    list-style: none;
+    padding: 0;
+    margin-top: 1rem;
+}
+
+.chart-legend li {
+    display: flex;
+    align-items:center;
+    margin-bottom:.5rem;
+    font-size: .9rem;
+    justify-content: center;
+
+}
+
+.dot {
+    width:12px;
+    height:12px;
+    border-radius: 50%;
+    margin-right: .5rem;
+}
+
+.red { background-color: #f44336;}
+.green { background-color: #4caf50; }
+.yellow { background-color: #ffc107; }
