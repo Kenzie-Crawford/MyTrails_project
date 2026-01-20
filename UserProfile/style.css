@@ -1,0 +1,14 @@
+.profile-img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+}
+
+.profile-header {
+    background-color: #d7be82;
+    padding: 20px;
+}
+
+body {
+    background-image: url("../Images/openSpaces.jpg");
+}
