@@ -1,0 +1,37 @@
+body {
+    min-height:100vh;
+    margin:0;
+    background-image:url("../Images/openSpaces.jpg");
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+   display:flex;
+   justify-content: center;
+   align-items: center;
+   
+}
+.register-box{
+    width:300px;
+    padding:20px;
+    background-color:rgb(248, 174, 64);
+    border-radius:8px;
+    box-shadow:0 4px 10px rgba(0,0,0,0.1);
+
+}
+
+form {
+font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+font-weight: bold;
+}
+
+h1 {
+    text-align:center;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight: bold;
+}
+
+button {
+    padding: 10px 15px;
+    margin-top: 10px;;
+}
+
