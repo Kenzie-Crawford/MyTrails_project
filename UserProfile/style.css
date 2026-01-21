@@ -51,6 +51,7 @@ body {
 .btn-primary {
     background-color: #515a47;
     border: none;
+    margin-top: 10px;
 }
 
 .btn-primary:hover {
@@ -65,4 +66,8 @@ body {
 }
 .btn-secondary:hover {
     background-color: #7a4419;
+}
+
+.form-select{
+    margin-top: 10px;
 }
