@@ -12,3 +12,57 @@
 body {
     background-image: url("../Images/openSpaces.jpg");
 }
+
+.image-slider {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  gap: 1rem;
+}
+
+.image-slider img {
+  width: 300px;          
+  height: 200px;
+  object-fit: cover;
+  scroll-snap-align: start;
+  border-radius: 12px;
+  flex-shrink: 0;
+}
+
+.trail-pics {
+    width:100%;
+    margin-top: 40px;
+    padding:20px;
+    background-color:#d7be82;
+    border-radius:8px;
+    box-shadow:0 4px 10px rgba(0,0,0,0.1);
+}
+
+.wish-list {
+     width:100%;
+    margin-top: 40px;
+    padding:20px;
+    background-color:#d7be82;
+    border-radius:8px;
+    box-shadow:0 4px 10px rgba(0,0,0,0.1);
+   
+}
+
+.btn-primary {
+    background-color: #515a47;
+    border: none;
+}
+
+.btn-primary:hover {
+    background-color: #7a4419;
+}
+
+.btn-secondary {
+   
+    background-color: #515a47;
+    border: none;
+    margin-top: 10px;
+}
+.btn-secondary:hover {
+    background-color: #7a4419;
+}
