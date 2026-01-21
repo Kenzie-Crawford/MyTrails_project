@@ -78,4 +78,13 @@ h5 {
 
 }
 
+.table td {
+    background-color: #d7be82;
+    color: black;
+}
+
+.table thead th {
+    background-color: #515a47;
+}
+
 
