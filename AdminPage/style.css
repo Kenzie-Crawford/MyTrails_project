@@ -2,19 +2,21 @@ body {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     min-height: 100vh;
     margin: 0;
-    background: linear-gradient(
-        to bottom,
-         #d7be82,
-         #515a47    )
-   
-    
+    background-image: url("../Images/openSpaces.jpg");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 h5 {
     text-align: center;
+    color: white;
+    font-weight: bolder;
 }
 
 .container-fluid{
     margin-top: 20px;
+    margin-bottom: 20px;
 }
 
 .pie-chart {
@@ -34,6 +36,8 @@ h5 {
     list-style: none;
     padding: 0;
     margin-top: 1rem;
+    color:white;
+    font-weight: bolder;
 }
 
 .chart-legend li {
@@ -66,6 +70,8 @@ h5 {
 .custom-navbar {
     background-color: #515a47;
     box-shadow: #070707 0px 4px 10px;
+    
+
 }
 .custom-navbar .navbar-brand, .nav-link {
     color: white;
