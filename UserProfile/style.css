@@ -10,7 +10,12 @@
 }
 
 body {
-    background-image: url("../Images/openSpaces.jpg");
+    background-image: url("../Images/grassGif.gif");
+     background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    
 }
 
 .image-slider {
