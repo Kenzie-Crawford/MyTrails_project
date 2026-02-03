@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SBA Trail Bucket List</title>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="script.js"></script>
+</head>
+
+<body>
+    <header>
+        <h1>My Trails Bucket List</h1>
+    </header>
+    <main>
+        <section class="input-section">
+            <h2>Trail Input</h2>
+            <form id="trail-form">
+                <label for="trail-name">Trail Name:</label>
+                <input type="text" id="trail-name" name="trail-name" required>
+
+               
+
+                <label for="trail-difficulty">Difficulty:</label>
+                <select id="trail-difficulty" name="trail-difficulty" required>
+                    <option value="">Select difficulty</option>
+                    <option value="easy">Easy</option>
+                    <option value="moderate">Moderate</option>
+                    <option value="hard">Hard</option>
+                </select>
+
+                <label for="trail-category">Category:</label>
+                <select id="trail-category" name="trail-category" required>
+                    <option value="">Select category</option>
+                    <option value="hiking">Hiking</option>
+                    <option value="biking">Biking</option>
+                    <option value="running">Running</option>
+                    <option value="scenic">Scenic</option>
+                </select>
+
+                <div class="checkbox-group">
+
+                <label>
+                    <input type="checkbox" id="dog-friendly">
+                    Dog Friendly
+                </label>
+
+                <label>
+                    <input type="checkbox" id="wheelchair-accessible">
+                    Wheelchair Accessible
+                </label>
+                </div>
+
+                <button type="submit">Add Trail</button>
+            </form>
+        </section>
+        <section class="trail-list-section">
+            <h2>Trail List</h2>
+            <ul id="trail-list">
+
+            </ul>
+        </section>
+    </main>
+</body>
