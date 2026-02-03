@@ -1,4 +1,4 @@
-/* General Body */
+
 body {
     background-image: url("../Images/openSpaces.jpg");
     background-size: cover;
@@ -10,7 +10,7 @@ body {
     padding: 0;
 }
 
-/* Header */
+
 header {
     background-color: #d7be82;
     padding: 20px;
@@ -21,7 +21,7 @@ header {
     box-shadow: 0 2px 6px rgba(0,0,0,0.1);
 }
 
-/* Main Sections */
+
 .input-section, .trail-list-section {
     width: 90%;
     max-width: 600px;
@@ -32,7 +32,7 @@ header {
     box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
-/* Forms */
+
 form label {
     display: block;
     margin-top: 10px;
@@ -59,7 +59,7 @@ form select {
     margin-right: 10px;
 }
 
-/* Buttons */
+
 button {
     display: inline-block;
     padding: 10px 20px;
@@ -68,7 +68,7 @@ button {
     cursor: pointer;
     color: #fff;
     font-weight: bold;
-    transition: background 0.3s;
+   
 }
 
 button[type="submit"], .btn-primary {
@@ -89,7 +89,7 @@ button[type="submit"]:hover, .btn-primary:hover {
     background-color: #7a4419;
 }
 
-/* Trail List Items */
+
 #trail-list {
     list-style-type: none;
     padding: 0;

@@ -1,5 +1,6 @@
-const trailform = document.getElementById('trail-form');
+const trailForm = document.getElementById('trail-form');
 const trailList = document.getElementById('trail-list');
+const trailTemplate = document.getElementById('trail-item-template');
 
 const trailNameInput = document.querySelector('#trail-name');
 const trailDifficultySelect = document.querySelector('#trail-difficulty');
@@ -7,7 +8,17 @@ const trailCategorySelect = document.querySelector('#trail-category');
 const dogFriendlyCheckbox = document.querySelector('#dog-friendly');
 const wheelchairCheckbox = document.querySelector('#wheelchair-accessible');
 
-trailform.addEventListener('submit', (event) => {
+const trails = [];
+
+trailNameInput.addEventListener('input', () => {
+    if (trailNameInput.value.trim().length < 3) {
+        trailNameInput.setCustomValidity('Trail name must be at least 3 characters.');
+    } else {
+        trailNameInput.setCustomValidity('');
+    }
+});
+
+trailForm.addEventListener('submit', (event) => {
     event.preventDefault();
 
     const trailData = {
@@ -16,54 +27,57 @@ trailform.addEventListener('submit', (event) => {
         category: trailCategorySelect.value,
         dogFriendly: dogFriendlyCheckbox.checked,
         wheelchair: wheelchairCheckbox.checked
-
     };
 
-    const trailItem = createTrailItem(trailData);
-    trailList.appendChild(trailItem);
+    trails.push(trailData);
 
-    trailform.reset();
+    alert(`Trail "${trailData.name}" added to your list!`);
+
+    renderTrails();
+    trailForm.reset();
 });
 
-function createTrailItem(trail) {
-    
-    const li = document.createElement('li');
-    li.classList.add('trail-item');
+function renderTrails() {
+    if (trailList.firstChild) {
+        console.log("First trail in the list:", trailList.firstChild);
+        console.log("Last trail in the list:", trailList.lastChild);
+    }
 
+    const fragment = document.createDocumentFragment();
 
-    const infoDiv = document.createElement('div');
-    infoDiv.classList.add('trail-info');
+    trails.forEach(trail => {
+        const clone = trailTemplate.content.cloneNode(true);
 
-    const nameSpan = document.createElement('span');
-    nameSpan.classList.add('trail-name');
-    nameSpan.textContent = trail.name;
+        const infoSpan = document.createElement('span');
+        infoSpan.classList.add('trail-info');
 
-    const detailsSpan = document.createElement('span');
-    detailsSpan.classList.add('trail-details');
-    detailsSpan.textContent = `(${trail.difficulty}) (${trail.category})`;
+        const checkboxInfo = [];
+        if (trail.dogFriendly) checkboxInfo.push('Dog Friendly');
+        if (trail.wheelchair) checkboxInfo.push('Wheelchair Accessible');
 
-    
-    const checkboxSpan = document.createElement('span');
-    checkboxSpan.classList.add('trail-checkbox-info');
-    const checkboxInfo = [];
-    if (trail.dogFriendly) checkboxInfo.push('Dog Friendly');
-    if (trail.wheelchair) checkboxInfo.push('Wheelchair Accessible');
-    checkboxSpan.textContent = checkboxInfo.length > 0 ? `[${checkboxInfo.join(', ')}]` : '';
+        infoSpan.textContent = `${trail.name} (${trail.difficulty}) (${trail.category})` +
+                               (checkboxInfo.length ? ` [${checkboxInfo.join(', ')}]` : '');
 
-    
-    infoDiv.appendChild(nameSpan);
-    infoDiv.appendChild(detailsSpan);
-    infoDiv.appendChild(checkboxSpan);
+        infoSpan.addEventListener('mouseover', () => infoSpan.classList.add('highlight'));
+        infoSpan.addEventListener('mouseout', () => infoSpan.classList.remove('highlight'));
 
-   
-    const deleteBtn = document.createElement('button');
-    deleteBtn.textContent = "Delete Trail";
-    deleteBtn.classList.add('delete-btn');
-    deleteBtn.addEventListener('click', () => li.remove());
+        clone.querySelector('.trail-item').prepend(infoSpan);
 
-    // Append info and button to li
-    li.appendChild(infoDiv);
-    li.appendChild(deleteBtn);
+        const deleteButton = clone.querySelector('.delete-btn');
+        deleteButton.addEventListener('click', () => {
+            const index = trails.indexOf(trail);
+            if (index > -1) {
+                
+                if (confirm(`Delete trail "${trail.name}"?`)) {
+                    trails.splice(index, 1);
+                    renderTrails();
+                }
+            }
+        });
 
-    return li;
+        fragment.appendChild(clone);
+    });
+
+    trailList.innerHTML = '';
+    trailList.appendChild(fragment);
 }
